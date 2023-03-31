@@ -4,28 +4,8 @@
         "CWD82KO": {
             "Type": "AWS::CloudWatch::Dashboard",
             "Properties": {
-                "widgets": [
-                    {
-                        "height": 6,
-                        "width": 6,
-                        "y": 0,
-                        "x": 0,
-                        "type": "metric",
-                        "properties": {
-                            "view": "timeSeries",
-                            "stacked": false,
-                            "metrics": [
-                                [
-                                    "event_bank",
-                                    "OverallBalance",
-                                    "Total",
-                                    "Total"
-                                ]
-                            ],
-                            "region": "us-east-1"
-                        }
-                    }
-                ]
+                "DashboardName": "overall-balance",
+                "DashboardBody": "{\"widgets\": [ {\"height\": 6,\"width\": 6,\"y\": 0,\"x\": 0,\"type\": \"metric\",\"properties\": {\"view\": \"timeSeries\",\"stacked\": false,\"metrics\": [[\"event_bank\",\"OverallBalance\",\"Total\",\"Total\"]],\"region\": \"us-east-1\"}}]}"
             },
             "Metadata": {
                 "AWS::CloudFormation::Designer": {
