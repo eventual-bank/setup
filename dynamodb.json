@@ -1,0 +1,14 @@
+Resources:
+    DynamoDB:
+        Type: AWS::DynamoDB::Table
+        Properties:
+            TableName: account
+            AttributeDefinitions:
+              - AttributeName: "account_id"
+                AttributeType: "N"
+            KeySchema:
+              - AttributeName: "account_id"
+                KeyType: "HASH"
+            ProvisionedThroughput:
+              ReadCapacityUnits: "5"
+              WriteCapacityUnits: "5"
