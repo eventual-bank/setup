@@ -1,0 +1,37 @@
+Resources:
+    LowerThan:
+        Type: AWS::CloudWatch::Alarm
+        Properties: 
+            Namespace: event_bank
+            MetricName: OverallBalance
+            ComparisonOperator: "LessThanThreshold"
+            Dimensions:
+                - Name: Total
+                  Value: Total  
+            EvaluationPeriods: 3
+            DatapointsToAlarm: 3
+            Period: 300
+            Statistic: "Maximum"
+            Threshold: "1000"
+            ActionsEnabled: "true"
+            AlarmActions: [ "arn:aws:sns:us-east-1:709238829564:UnexpectedBalance" ]
+            AlarmName: "lower_than_1000"
+    GreaterThan:
+        Type: AWS::CloudWatch::Alarm
+        Properties: 
+            Namespace: event_bank
+            MetricName: OverallBalance
+            ComparisonOperator: "GreaterThanThreshold"
+            Dimensions:
+                - Name: Total
+                  Value: Total  
+            EvaluationPeriods: 3
+            DatapointsToAlarm: 3
+            Period: 300
+            Statistic: "Minimum"
+            Threshold: "1000"
+            ActionsEnabled: "true"
+            AlarmActions: [ "arn:aws:sns:us-east-1:709238829564:UnexpectedBalance" ]
+            AlarmName: "greater_than_1000"
+        
+        

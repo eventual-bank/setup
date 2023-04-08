@@ -3,10 +3,12 @@ Resources:
         Type: AWS::DynamoDB::Table
         Properties:
             TableName: account
-            BillingMode: PAY_PER_REQUEST
             AttributeDefinitions:
               - AttributeName: "account_id"
                 AttributeType: "N"
             KeySchema:
               - AttributeName: "account_id"
                 KeyType: "HASH"
+            ProvisionedThroughput:
+              ReadCapacityUnits: "5"
+              WriteCapacityUnits: "5"
