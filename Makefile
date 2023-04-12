@@ -19,6 +19,5 @@ delete-dynamodb:
 delete-cw-alarm:
 	aws cloudformation delete-stack --stack deploy-cw-alarm
 
-
 deploy-cw-alarm:
 	aws cloudformation deploy --template-file cw_alarm.yaml --stack deploy-cw-alarm
