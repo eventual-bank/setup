@@ -21,3 +21,9 @@ delete-cw-alarm:
 
 deploy-cw-alarm:
 	aws cloudformation deploy --template-file cw_alarm.yaml --stack deploy-cw-alarm
+
+deploy-sns:
+	aws cloudformation deploy --template-file sns.yaml --stack deploy-sns
+
+delete-sns:
+	aws cloudformation delete-stack --stack deploy-sns

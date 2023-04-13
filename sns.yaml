@@ -1,0 +1,9 @@
+Resources:
+    UnexpectedBalance:
+        Type: AWS::SNS::Topic
+        Properties: 
+            TopicName: UnexpectedBalance        
+            Subscription:
+            - Endpoint: "epatro@gmail.com"
+              Protocol: "email"
+
