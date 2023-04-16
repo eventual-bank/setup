@@ -11,7 +11,7 @@ delete-sqs:
 	aws cloudformation delete-stack --stack deploy-sqs
 
 deploy-dynamodb:
-	aws cloudformation deploy --template-file dynamodb.json --stack dynamodb
+	aws cloudformation deploy --template-file dynamodb.yaml --stack dynamodb
 
 delete-dynamodb:
 	aws cloudformation delete-stack --stack dynamodb
