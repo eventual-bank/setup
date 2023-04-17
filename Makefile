@@ -2,7 +2,7 @@ deploy-cw-dashboard:
 	aws cloudformation deploy --template-file cw_dashboard.template --stack deploy-cw-dashboard
 
 deploy-sqs:
-	aws cloudformation deploy --template-file sqs.template --stack deploy-sqs
+	aws cloudformation deploy --template-file sqs.yaml --stack deploy-sqs
 
 delete-cw-dashboard:
 	aws cloudformation delete-stack --stack deploy-cw-dashboard
